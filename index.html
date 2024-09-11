@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hareem Farooqi's Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #cccccc; /* Light grey background */
+      animation: fadeInBody 1.5s ease;
+    }
+
+    /* Main container */
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background-color: white; /*boxes */
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.75);
+      border-radius: 8px;
+      margin: 120px auto 0 auto;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* Fixed Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+      z-index: 100;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    /* Header title */
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+      color: #333;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #0056b3;
+    }
+
+    /* Each section styled as a box */
+    .box {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+      background-color: #fff;
+      opacity: 20%;
+      transform: translateY(20px);
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .box:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .box:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+
+    .box:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    .box:nth-child(4) {
+      animation-delay: 1.1s;
+    }
+
+    /* each headings */
+    h2 {
+      text-align: center;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    h2:hover {
+      color: #0056b3;
+    }
+
+    
+    .profile-pic-container {
+      text-align: center;
+      margin-top: 2px;
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.25);
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #353535;
+      font-size: 18px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    footer a {
+      color: #0057b4;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #003c7c;
+    }
+
+    /* animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInBody {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive design for mobile */
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+    }
+
+    /* button for Skills */
+    .toggle-btn {
+      display: block;
+      width: 30%; 
+      padding: 8px 0; 
+      margin: 15px auto; 
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      border:color-mix(in hsl shorter hue, color percentage, color percentage);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+
+    #skills-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Scroll Effect -->
+  <header>
+    <h1>Hareem Farooqi's Resume</h1>
+    <nav>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Work Experience</a></li>
+        <li><a href="#contact">Contact</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main container for content -->
+  <div class="container">
+    <!-- Profile Image -->
+    <div class="profile-pic-container">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic"> <!-- Updated to profile.jpg -->
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="box">
+      <h2>Introduction</h2>
+      <p>
+        Alhamdulillah I am a dedicated professional with experience in social media management, graphic design, video editing, and web development. 
+        I have collaborated with global clients like Dr. Quran (UK), HSH Clothing (Canada), Sheraz Properties (Dubai), and Ansaarullah (Pakistan) 
+        to create visually compelling content and manage impactful digital strategies. 
+      </p>
+      <p>
+        With a solid foundation in programming languages Alhamdulillah like C, C#, C++, Java, JavaScript, TypeScript, HTML, and CSS, 
+        I build user-friendly websites and applications. Currently, I am expanding my knowledge in generative AI and Cloud Computing to further enhance my skill set In Shaa Allah.
+      </p>
+      <p>
+        Passionate about continuous learning, I aim to contribute my diverse expertise in web development, design, and social media management to deliver creative and effective solutions In Shaa Allah.
+      </p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="box">
+      <h2>Education</h2>
+      <p><strong>Bachelor in Computer Science</strong></p>
+      <p>UBIT KARACHI UNIVERSITY 2014- 2017</p>
+      <p><strong>Web Development</strong></p>
+      <p>MEMON FOUNDATION 2014</p>
+      <p><strong>Graphic Designing</strong></p>
+      <p>MEMON FOUNDATION 2014</p>
+      <p><strong>Android App Development</strong></p>
+      <p>SIR SYED UNIVERSITY 2016</p>
+      <p><strong>Game Development</strong></p>
+      <p>Software House 2016</p>
+      <p><strong>Linux Fundamentals</strong></p>
+      <p>NED UNIVERSITY 2016</p>
+      <p><strong>Generative AI & Cloud Computing</strong></p>
+      <p>Currently - 2026 In Shaa Allah</p>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="box">
+      <h2>Skills</h2>
+      <div id="skills-content">
+        <ul>
+          <li>WordPress Development</li>
+          <li>Graphic Designing</li>
+          <li>Video Editing</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>Android App Development</li>
+          <li>3D Game Development</li>
+          <li>Branding</li>
+          <li>SEO</li>
+          <li>TypeScript</li>
+          <li>HTML & CSS</li>
+          <li>C, C#, C++, Java</li>
+          <li>Photography</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Toggle Button for Skills Section -->
+<button class="toggle-btn" onclick="toggleSkills()">Show Skills</button>
+
+    <section id="experience" class="box">
+      <h2>Work Experience</h2>
+      <p><strong>Graphic Designer, Video Editor, WordPress Developer, Social Media Manager</strong></p>
+      <p>Freelancing 2016 - Present</p>
+      <p>Dr. Quran (UK), HSH Clothing (Canada), Sheraz Properties (Dubai), Ansaarullah (Pakistan)</p>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <p>© 2024 Hareem. All Rights Reserved.</p>
+    <p>Contact: hareemfarooqi2134@yahoo.com</p>
+    <p>
+      <a href="https://www.linkedin.com/in/hareemfarooqi/">LinkedIn</a> | 
+      <a href="https://github.com/Hareem2134">GitHub</a> | 
+      <a href="https://www.instagram.com/HAREEM.FAROOQI">Instagram</a>
+    </p>
+  </footer>
+
+<!-- toggle the skills section and change button text -->
+<script>
+    function toggleSkills() {
+      const skillsContent = document.getElementById('skills-content');
+      const toggleButton = document.querySelector('.toggle-btn');
+      
+      if (skillsContent.style.display === 'block') {
+        skillsContent.style.display = 'none';
+        toggleButton.textContent = 'Show Skills'; // Change to "Show Skills"
+      } else {
+        skillsContent.style.display = 'block';
+        toggleButton.textContent = 'Hide Skills'; // Change to "Hide Skills"
+      }
+    }
+
+      // fixed header navigation
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      // Scroll to the element minus the header height
+      const headerOffset = document.querySelector('header').offsetHeight;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth' // Smooth scrolling effect
+      });
+    });
+  });
+
+
+  </script>
+</body>
+</html>
